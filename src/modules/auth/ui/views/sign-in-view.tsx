@@ -21,6 +21,8 @@ import { OctagonAlertIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import {FaGithub, FaGoogle} from 'react-icons/fa'
+import { SocialAuth } from "../components/social-auth";
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -31,6 +33,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export const SignInView = () => {
   const router = useRouter();
+
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
 
@@ -134,24 +137,11 @@ export const SignInView = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="w-full"
-                    disabled={pending}
-                  >
-                    Google
-                  </Button>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="w-full"
-                    disabled={pending}
-                  >
-                    Github
-                  </Button>
-                </div>
+                <SocialAuth 
+                  pending={pending}
+                  setPending={setPending}
+                  setError={setError}
+                />
 
                 <div className="text-center text-sm">
                   Don{"'"}t have an account?{" "}
