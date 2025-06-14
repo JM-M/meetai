@@ -18,7 +18,6 @@ export const DashboardNavbar = () => {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      console.log(e.key);
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         toggleCommandOpen();
