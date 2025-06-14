@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa"; // Change to simple icon
 
 type Props = {
   pending: boolean;
