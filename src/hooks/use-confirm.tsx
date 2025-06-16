@@ -37,7 +37,7 @@ export const useConfirm = (
       title={title}
       description={description}
     >
-      <div className="flex w-full flex-col-reverse items-center justify-end gap-x-2 gap-y-2 p-4 md:flex-row">
+      <div className="flex w-full flex-col-reverse items-center justify-end gap-x-2 gap-y-2 md:flex-row">
         <Button
           onClick={handleCancel}
           variant="outline"
