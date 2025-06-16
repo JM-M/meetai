@@ -174,7 +174,11 @@ export const SignUpView = () => {
                   </Alert>
                 )}
 
-                <Button type="submit" className="w-full" isLoading={pending}>
+                <Button
+                  type="submit"
+                  className="w-full"
+                  // isLoading={pending}
+                >
                   Sign in
                 </Button>
 
