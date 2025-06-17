@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ActiveState } from "../components/active-state";
 import { CancelledState } from "../components/cancelled-state";
+import { CompletedState } from "../components/completed-state";
 import { MeetingIdViewHeader } from "../components/meeting-id-view-header";
 import { ProcessingState } from "../components/processing-state";
 import { UpcomingState } from "../components/upcoming-state";
@@ -79,7 +80,7 @@ export const MeetingIdView = ({ meetingId }: Props) => {
         />
         {isCancelled && <CancelledState />}
         {isProcessing && <ProcessingState />}
-        {isCompleted && <div>Completed</div>}
+        {isCompleted && <CompletedState data={data} />}
         {isActive && <ActiveState meetingId={meetingId} />}
         {isUpcoming && (
           <UpcomingState
