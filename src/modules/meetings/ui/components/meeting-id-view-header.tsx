@@ -50,7 +50,7 @@ export const MeetingIdViewHeader = ({
               asChild
               className="text-foreground text-xl font-medium"
             >
-              <Link href={`/meetings/${meetingId}`}>My Meetings</Link>
+              <Link href={`/meetings/${meetingId}`}>{meetingName}</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
