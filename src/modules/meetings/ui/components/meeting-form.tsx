@@ -75,13 +75,13 @@ export const MeetingForm = ({
 
   const createAgent = useMutation(
     trpc.meetings.create.mutationOptions({
-      onSuccess: async () => {
+      onSuccess: async (data) => {
         await queryClient.invalidateQueries(
           trpc.meetings.getMany.queryOptions({}),
         );
 
         // TODO: Invalidate free tier usage
-        onSuccess?.();
+        onSuccess?.(data.id);
       },
       onError: (error) => {
         // TODO: Redirect if forbidden
