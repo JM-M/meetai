@@ -54,7 +54,6 @@ export const AgentForm = ({
         onSuccess?.();
       },
       onError: (error) => {
-        // TODO: Redirect if forbidden
         toast.error(error.message);
       },
     }),
@@ -67,12 +66,17 @@ export const AgentForm = ({
           trpc.agents.getMany.queryOptions({}),
         );
 
-        // TODO: Invalidate free tier usage
+        await queryClient.invalidateQueries(
+          trpc.premium.getFreeUsage.queryOptions(),
+        );
+
         onSuccess?.();
       },
       onError: (error) => {
-        // TODO: Redirect if forbidden
         toast.error(error.message);
+        if (error.data?.code === "FORBIDDEN") {
+          router.push("/upgrade");
+        }
       },
     }),
   );
