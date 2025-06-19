@@ -77,9 +77,19 @@ export const DashboardUserButton = () => {
             <DrawerDescription>{data.user.email}</DrawerDescription>
           </DrawerHeader>
           <DrawerFooter>
-            <Button variant="outline" onClick={() => {}}>
-              <CreditCardIcon className="size-4 text-black" />
-              Billing
+            <Button
+              variant="outline"
+              onClick={() => authClient.customer.portal()}
+              asChild
+            >
+              <a
+                rel="norefferer"
+                target="_blank"
+                href="https://polar.sh/ronninai/portal"
+              >
+                <CreditCardIcon className="size-4 text-black" />
+                Billing
+              </a>
             </Button>
             <Button variant="outline" onClick={onLogout}>
               <LogOutIcon className="size-4 text-black" />
@@ -106,8 +116,18 @@ export const DashboardUserButton = () => {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="flex cursor-pointer items-center justify-between">
-          Billing <CreditCardIcon className="size-4" />
+        <DropdownMenuItem
+          className="flex cursor-pointer items-center justify-between"
+          onClick={() => authClient.customer.portal()}
+          asChild
+        >
+          <a
+            rel="norefferer"
+            target="_blank"
+            href="https://polar.sh/roninai/portal"
+          >
+            Billing <CreditCardIcon className="size-4" />
+          </a>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={onLogout}

@@ -67,7 +67,6 @@ export const MeetingForm = ({
         onSuccess?.(data.id);
       },
       onError: (error) => {
-        // TODO: Redirect if forbidden
         toast.error(error.message);
       },
     }),
@@ -80,11 +79,16 @@ export const MeetingForm = ({
           trpc.meetings.getMany.queryOptions({}),
         );
 
-        // TODO: Invalidate free tier usage
+        await queryClient.invalidateQueries(
+          trpc.premium.getFreeUsage.queryOptions(),
+        );
+
         onSuccess?.(data.id);
       },
       onError: (error) => {
-        // TODO: Redirect if forbidden
+        if (error.data?.code === "FORBIDDEN") {
+          router.push("/upgrade");
+        }
         toast.error(error.message);
       },
     }),
