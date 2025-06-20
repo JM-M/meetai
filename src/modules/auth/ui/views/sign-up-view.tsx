@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { OctagonAlertIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -207,7 +208,13 @@ export const SignUpView = () => {
             </form>
           </Form>
           <div className="from-sidebar-accent to-sidebar relative hidden flex-col items-center justify-center gap-y-4 bg-radial md:flex">
-            <img src="/logo.svg" alt="Image" className="h-[92px] w-[92px]" />
+            <Image
+              src="/logo.svg"
+              alt="Image"
+              className="h-[92px] w-[92px]"
+              height={92}
+              width={92}
+            />
             <p className="text-2xl font-semibold text-white">Ronin.AI</p>
           </div>
         </CardContent>
