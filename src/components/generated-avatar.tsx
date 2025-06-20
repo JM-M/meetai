@@ -13,7 +13,7 @@ export const GeneratedAvatar = ({
   className,
   variant,
 }: GeneratedAvatarProps) => {
-  let avatarUri = generateAvatarUri({ seed, variant });
+  const avatarUri = generateAvatarUri({ seed, variant });
 
   return (
     <Avatar className={cn(className)}>

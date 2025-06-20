@@ -37,8 +37,8 @@ export const UpgradeView = () => {
             let onClick = () => authClient.checkout({ products: [product.id] });
 
             if (isCurrentProduct) {
-              (buttonText = "Manage"),
-                (onClick = () => authClient.customer.portal());
+              buttonText = "Manage";
+              onClick = () => authClient.customer.portal();
             } else if (isPremium) {
               buttonText = "Change Plan";
               onClick = () => authClient.customer.portal();

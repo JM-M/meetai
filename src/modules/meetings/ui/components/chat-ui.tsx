@@ -25,7 +25,7 @@ interface ChatUIProps {
 
 export const ChatUI = ({
   meetingId,
-  meetingName,
+  // meetingName,
   userId,
   userName,
   userImage,
