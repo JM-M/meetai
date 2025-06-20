@@ -48,8 +48,8 @@ export const DashboardSidebar = () => {
     <Sidebar>
       <SidebarHeader className="text-sidebar-accent-foreground">
         <Link href="/" className="flex items-center gap-2 px-2 pt-2">
-          <Image src="/logo.svg" height={36} width={36} alt="Ronin AI" />
-          <p className="text-2xl font-semibold">Ronin AI</p>
+          <Image src="/logo.svg" height={36} width={36} alt="Meet AI" />
+          <p className="text-2xl font-semibold">Meet AI</p>
         </Link>
       </SidebarHeader>
       <div className="px-y py-2">

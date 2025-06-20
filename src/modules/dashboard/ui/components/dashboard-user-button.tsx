@@ -85,7 +85,7 @@ export const DashboardUserButton = () => {
               <a
                 rel="norefferer"
                 target="_blank"
-                href="https://polar.sh/ronninai/portal"
+                onClick={() => authClient.customer.portal()}
               >
                 <CreditCardIcon className="size-4 text-black" />
                 Billing
@@ -124,7 +124,7 @@ export const DashboardUserButton = () => {
           <a
             rel="norefferer"
             target="_blank"
-            href="https://polar.sh/roninai/portal"
+            onClick={() => authClient.customer.portal()}
           >
             Billing <CreditCardIcon className="size-4" />
           </a>
